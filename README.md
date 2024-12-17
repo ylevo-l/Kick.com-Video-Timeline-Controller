@@ -1,22 +1,22 @@
 # Kick.com Video Timeline Controller
 
 ## Overview
-Tampermonkey script for precise Kick.com video navigation with arrow keys and notifications.
+A Tampermonkey script for precise video navigation on Kick.com using arrow keys and on-screen notifications.
 
 ## Controls
-- **Arrow Right**: Seek forward by default increment.
-- **Arrow Left**: Seek backward by default increment.
-- **Hold Arrow Keys**: Gradually increases seek speed to max.
-- **Shift + Arrow Keys**: Precise, smaller increments.
+- **Arrow Right**: Seek forward by the default increment.
+- **Arrow Left**: Seek backward by the default increment.
+- **Hold Arrow Keys**: Gradually increases seek speed to the maximum.
+- **Shift + Arrow Keys**: Seek with smaller, precise increments.
 
 ## Configuration
-- `seekInitial`: Start increment (default: 0.5s).
-- `seekIncrement`: Speed increase while holding (default: 0.1s).
-- `seekMax`: Max speed (default: 5s).
-- `notificationDuration`: Notification time (default: 1000ms).
-- `notificationScale`: Notification size (default: 1).
+- `seekInitial`: Initial seek increment in seconds (default: `0.5s`).
+- `seekIncrement`: Increment added while holding keys (default: `0.1s`).
+- `seekMax`: Maximum seek speed in seconds (default: `5s`).
+- `notificationDuration`: Duration of notifications in milliseconds (default: `1000ms`).
+- `notificationScale`: Scale of the notification box (default: `1`).
 
-### Edit the `config` object:
+### Customize the `config` object:
 ```javascript
 const config = {
     seekInitial: 0.5,
