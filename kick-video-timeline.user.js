@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kick.com Video Timeline Controller
 // @namespace    https://github.com/fxdk14/Kick.com-Video-Timeline-Controller
-// @version      1.0
+// @version      1.1
 // @description  Arrow key controls for precise Kick.com timeline navigation.
 // @author       fxdk_
 // @match        https://kick.com/*
@@ -124,7 +124,13 @@
             this.isBuffering = !this.video.paused && this.video.readyState < 3;
         }
 
+        isInputFocused() {
+            const el = document.activeElement;
+            return el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable);
+        }
+
         onKeyDown(e) {
+            if (this.isInputFocused()) return;
             const key = this.keys[e.key];
             if (!key || key.active) return;
             e.preventDefault();
